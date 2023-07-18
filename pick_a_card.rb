@@ -23,4 +23,4 @@ number.times do
 end
 
 puts 'Понравилось?'
-ask = gets
+gets
