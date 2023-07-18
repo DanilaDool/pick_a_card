@@ -21,3 +21,6 @@ number = STDIN.gets.to_i
 number.times do
   puts "#{values.sample}#{suits.sample}"
 end
+
+puts 'Понравилось?'
+gets
