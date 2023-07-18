@@ -3,6 +3,21 @@ puts "Это программа выводит тебе столько карт 
 
 values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
 
-suits = File.readlines('/home/danila/ruby/pick_a_card/pick_a_card/data/suits.txt', chomp: true)
+suits = File.readlines('./data/suits.txt', chomp: true)
 
-puts "#{values.sample}#{suits.sample}"
+cards = []
+
+values.each do |value|
+  suits.each do |suit|
+    cards << "#{value} of #{suit}"
+  end
+end
+
+cards.shuffle!
+
+puts 'Сколько карт тебе выдать?'
+number = STDIN.gets.to_i
+
+number.times do
+  puts "#{values.sample}#{suits.sample}"
+end
